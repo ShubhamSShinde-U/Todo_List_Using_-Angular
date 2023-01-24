@@ -1,0 +1,17 @@
+<div class="my-3">
+<h4>Add Todos</h4>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Todo Title</label>
+      <input type="text" [(ngModel)]="title" class="form-control" name="title" id="title" aria-describedby="emailHelp">
+        <!-- we are getting error so add formModule in app.Module -->
+    </div>
+    <div class="form-group">
+      <label for="desc">Description</label>
+      <input type="text" [(ngModel)]="desc" class="form-control" name="desc"id="desc">
+    </div>
+    
+    <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+  </form>
+
+</div>

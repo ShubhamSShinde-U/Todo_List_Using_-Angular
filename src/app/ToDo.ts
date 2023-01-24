@@ -1,6 +1,6 @@
 export class ToDo{
-    sno: number | undefined
-    title: string | undefined
-    desc: string | undefined
-    active: boolean | undefined
+    sno: number
+    title: string
+    desc: string
+    active: boolean
 }

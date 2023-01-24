@@ -5,7 +5,7 @@ import { ToDo } from "../../ToDo"
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.css']
 })
-export class TodosComponent {
+export class TodosComponent implements OnInit{
 
     todos:ToDo[];//create array of type ToDo.ts
 
@@ -32,8 +32,18 @@ export class TodosComponent {
       ]
     }
 
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
-
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+  
+  deleteToDo(todo:ToDo){
+    console.log(todo);
+    const index = this.todos.indexOf(todo);
+    this.todos.splice(index,1);
+  }
+  addToDo(todo:ToDo){
+    console.log(todo);
+    
+    this.todos.push(todo);
+  }
 }
