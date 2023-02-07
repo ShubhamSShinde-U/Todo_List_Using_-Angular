@@ -6,16 +6,21 @@ import { ToDo } from 'src/app/ToDo';
   templateUrl: './todos-item.component.html',
   styleUrls: ['./todos-item.component.css']
 })
-export class TodosItemComponent implements OnInit {
+export class TodosItemComponent  {
   @Input() todo: ToDo; //Accept the todos
+  @Input() i: number;  //Accept the index
   @Output() todoDelete: EventEmitter<ToDo> = new EventEmitter();//new event emitter to delete the todo after clicking the delete button
+  @Output() todocheckbox: EventEmitter<ToDo> = new EventEmitter();
   constructor(){}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
   onclick( todo: ToDo){
     this.todoDelete.emit(todo);
     console.log("Delete button clicked");
   }
 
+  onCheckboxClick(todo: ToDo | undefined){
+    this.todocheckbox.emit(todo);
+  }
 }

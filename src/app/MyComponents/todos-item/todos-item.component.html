@@ -1,6 +1,11 @@
 <div class="my-3">
-    <h3>{{todo.title}}</h3>
-    <p>Description</p>
+    <h5  [ngClass]="{'strike':!todo.active}">{{todo.title}}</h5>
+    <p [ngClass]="{'strike':!todo.active}">{{todo.desc}}</p>
+    
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="todo{i}}" (click)="onCheckboxClick(todo)" [checked]="!todo.active">
+        <label class="form-check-label" for="todo{i}}">Done</label>
+    </div>
     <!-- at the place of danger we can use primary it is property of bootstrap -->
-    <button class="btn btn-danger" (click)="onclick(todo)">Delete</button>  
+    <button class="btn btn-sm btn-danger" (click)="onclick(todo)">Delete</button>  
 </div>

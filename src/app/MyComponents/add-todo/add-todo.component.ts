@@ -6,15 +6,15 @@ import { ToDo } from 'src/app/ToDo';
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.css']
 })
-export class AddTodoComponent implements OnInit {
+export class AddTodoComponent  {
   title: string;
   desc: string;
   @Output() todoAdd: EventEmitter<ToDo> = new EventEmitter();//new event emitter to delete the todo after clicking the delete button
   constructor(){}
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+  // ngOnInit(): void {
+  //   throw new Error('Method not implemented.');
+  // }
 
   onSubmit(){
     const todo={
